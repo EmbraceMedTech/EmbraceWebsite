@@ -3,7 +3,7 @@
 
 // import { MantineProvider } from '@mantine/core';
 import  Mission  from './components/Mission/Mission';
-import {Header} from './components/Header/Header';
+// import {Header} from './components/Header/Header';
 
 export default function App() {
   return (
