@@ -2,9 +2,13 @@
 // All packages except `@mantine/hooks` require styles imports
 import '@mantine/core/styles.css';
 
-import { MantineProvider } from '@mantine/core';
-import  Mission  from './components/Mission';
+// import { MantineProvider } from '@mantine/core';
+import  Mission  from './components/Mission/Mission';
 
 export default function App() {
-  return <MantineProvider><Mission/></MantineProvider>;
+  return (
+  <div>
+    <Mission/>
+  </div>
+  )
 }
