@@ -1,7 +1,7 @@
 import { Autocomplete, Group, Burger, rem } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons-react';
-import { MantineLogo } from '@mantinex/mantine-logo';
+// import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './Header.module.css';
 
 const links = [
@@ -11,7 +11,7 @@ const links = [
   { link: '/community', label: 'Community' },
 ];
 
-export function HeaderSearch() {
+export function Header() {
   const [opened, { toggle }] = useDisclosure(false);
 
   const items = links.map((link) => (
@@ -30,7 +30,7 @@ export function HeaderSearch() {
       <div className={classes.inner}>
         <Group>
           <Burger opened={opened} onClick={toggle} size="sm" hiddenFrom="sm" />
-          <MantineLogo size={28} />
+          {/* <MantineLogo size={28} /> */}
         </Group>
 
         <Group>
