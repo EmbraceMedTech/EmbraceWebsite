@@ -3,11 +3,13 @@
 
 // import { MantineProvider } from '@mantine/core';
 import  Mission  from './components/Mission/Mission';
+import Home from './components/Home/Home';
 // import {Header} from './components/Header/Header';
 
 export default function App() {
   return (
   <div>
+    <Home/>
     <Mission/>
   </div>
   )
