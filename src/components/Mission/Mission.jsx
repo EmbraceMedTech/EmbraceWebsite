@@ -13,41 +13,11 @@ export default function Mission() {
             Our <span className={classes.highlight}>Mission</span>
           </Title>
           <Text c="dimmed" mt="md">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+            Over 600,000 amputees live in pain or discomfort due to an uncomfortable socket. A majority of these amputees simply want a limb that they can comfortably walk in during the day, but the rigidity of current sockets do not allow for an expansion or contraction of the limb, which is often the culprit of discomfort. While some mechanically adjusting sockets do exist, they are tedious to use, and very hard to implement due to complicated methods of tightening and loosening. 
           </Text>
-{/* 
-          <List
-            mt={30}
-            spacing="sm"
-            size="sm"
-            icon={
-              <ThemeIcon size={20} radius="xl">
-                <IconCheck style={{ width: rem(12), height: rem(12) }} stroke={1.5} />
-              </ThemeIcon>
-            }
-          >
-            <List.Item>
-              <b>TypeScript based</b> – build type safe applications, all components and hooks
-              export types
-            </List.Item>
-            <List.Item>
-              <b>Free and open source</b> – all packages have MIT license, you can use Mantine in
-              any project
-            </List.Item>
-            <List.Item>
-              <b>No annoying focus ring</b> – focus ring will appear only when user navigates with
-              keyboard
-            </List.Item>
-          </List>
-
-          <Group mt={30}>
-            <Button radius="xl" size="md" className={classes.control}>
-              Get started
-            </Button>
-            <Button variant="default" radius="xl" size="md" className={classes.control}>
-              Source code
-            </Button>
-          </Group> */}
+          <Text c="dimmed" mt="md">
+           With our automatically adjusting prosthetic socket, we will be able to let amputees focus on doing what they love, and give them their mobility back. 
+          </Text>
         </div>
       </div>
     </Container>
