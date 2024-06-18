@@ -1,8 +1,8 @@
-import { Menu, Group, Center, Burger, Container } from '@mantine/core';
+import { Menu, Group, Center, Burger, Container, Text, Button, Divider } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
 // import { MantineLogo } from '@mantinex/mantine-logo';
-// import classes from './Header.module.css';
+import classes from './Header.module.css';
 
 const links = [
   { link: '/about', label: 'Features' },
@@ -34,13 +34,25 @@ export function Header() {
     document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
   }
   return (
-    <div className="header">
-      <Container size="md" className="header" >
-        <button onClick={() => {scrollToSection('home')}}>Home</button>
-        <button onClick={() => {scrollToSection('mission')}}>Mission</button>
+    // <div className="header">
+    <header className={classes.header}>
+      <Container size='md' className={classes.inner}>
+      <div>
+        <Text>Althia Prosthetics</Text>
+      </div>
 
+      <Group gap={5} visibleFrom="xs">
+          <Button onClick={() => {scrollToSection('home')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Home</Button>
+          <Button onClick={() => {scrollToSection('mission')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Mission</Button>
+      </Group>
       </Container>
-    </div> 
+      <Divider size='xs'/>
+    </header>
+      // <Container size="md" className="header" >
+     
+
+      // </Container>
+    // </div> 
   )
 }
 
