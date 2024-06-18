@@ -5,7 +5,7 @@ import classes from './Mission.module.css';
 
 export default function Mission() {
   return (
-    <Container size="md">
+    <Container size="md" id='mission'>
       <div className={classes.inner}>
       <Image src={'placeholder.svg'} className={classes.image} />
         <div className={classes.content}>

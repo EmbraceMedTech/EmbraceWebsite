@@ -45,3 +45,25 @@ code {
   background-color: rgb(0, 0, 0, 0.6
   );
 }
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+    /* make sure the headers z-index is higher than the overlayed content */
+  z-index: 1; 
+  position: sticky;
+  top: 1rem;
+  
+  button {
+    /* background-color: #04AA6D;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    opacity: 1; */
+  }
+}

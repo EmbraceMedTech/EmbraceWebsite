@@ -5,7 +5,7 @@ import backgroundVideo from '../../assets/background_video.mp4'
 
 export default function Home() {
   return (
-    <div className="home">
+    <div className="home" id="home">
       <div className='overlay'></div>
       <video className="background_video" src={backgroundVideo} autoPlay loop muted />
       <div className='content'>
