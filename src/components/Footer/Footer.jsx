@@ -23,6 +23,10 @@ export function Footer() {
     </Anchor>
   ));
 
+  const clickGmail = () => {
+    window.location = 'mailto:althiaprosthetics@gmail.com'
+  }
+
   return (
     <div className={classes.footer}>
       <Divider my='md' size='xs'/>
@@ -32,7 +36,7 @@ export function Footer() {
         {/* <Group className={classes.links}>{items}</Group>
         , */}
         <ActionIcon size="lg" color="gray" variant="subtle">
-          <IconBrandGmail style={{ width: rem(25), height: rem(25) }} stroke={1.5}/>
+          <IconBrandGmail style={{ width: rem(25), height: rem(25) }} stroke={1.5} onClick={clickGmail}/>
         </ActionIcon>
       </Container>
     </div>

@@ -22,10 +22,10 @@ function C() {
     );
   }
 
-function Demo() {
-    const ref = useEventListener('click');
-    return <Card ref={ref}>Button clicks: {count}</Card>;
-  }
+// function Demo() {
+//     const ref = useEventListener('click');
+//     return <Card ref={ref}>Button clicks: {count}</Card>;
+//   }
 
 function Info() {
     const [opened, { open, close }] = useDisclosure(false);
