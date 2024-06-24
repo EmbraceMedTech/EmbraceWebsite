@@ -1,0 +1,22 @@
+{
+    "Christian Labrador" : {
+        "id" : 1,
+        "education" : "Brown University",
+        "concentration" : "Mechanical Engineering"
+    },
+    "Joseph Dewan" : {
+        "id" : 2,
+        "education" : "Brown University",
+        "concentration" : "Mechanical Engineering"
+    },
+    "Paula Rodriguez-Vilaboa" : {
+        "id" : 3,
+        "education" : "Brown University",
+        "concentration" : "Mechanical Engineering"
+    },
+    "Gabrielle Shieh" : {
+        "id" : 4,
+        "education" : "Brown University",
+        "concentration" : "Computer Science"
+    }
+}

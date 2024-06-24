@@ -6,6 +6,7 @@ import  Mission  from './components/Mission/Mission';
 import Home from './components/Home/Home';
 import {Header} from './components/Header/Header';
 import {Footer} from './components/Footer/Footer';
+import Team from './components/Team/Team';
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
     <Header/>
     <Home/>
     <Mission/>
+    <Team/>
     <Footer/>
   </div>
   )
