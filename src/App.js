@@ -4,6 +4,7 @@
 // import { MantineProvider } from '@mantine/core';
 import  Mission  from './components/Mission/Mission';
 import Home from './components/Home/Home';
+import Product from './components/Product/Product';
 import {Header} from './components/Header/Header';
 import {Footer} from './components/Footer/Footer';
 import Team from './components/Team/Team';
@@ -13,6 +14,7 @@ export default function App() {
   <div>
     <Header/>
     <Home/>
+    <Product/>
     <Mission/>
     <Team/>
     <Footer/>
