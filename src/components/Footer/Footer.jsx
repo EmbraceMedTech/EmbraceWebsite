@@ -30,15 +30,22 @@ export function Footer() {
   return (
     <div className={classes.footer}>
       <Divider my='md' size='xs'/>
-      <Container className={classes.inner}>
+      <div className={classes.inner}>
         {/* <MantineLogo size={28} /> */}
         <Text size='xl'>Althia Prosthetics</Text>
         {/* <Group className={classes.links}>{items}</Group>
         , */}
-        <ActionIcon size="lg" color="gray" variant="subtle">
+        {/* <ActionIcon size="lg" color="gray" variant="subtle">
           <IconBrandGmail style={{ width: rem(25), height: rem(25) }} stroke={1.5} onClick={clickGmail}/>
-        </ActionIcon>
-      </Container>
+        </ActionIcon> */}
+        <div>
+          <Text color='gray'>Email</Text>
+          <Text>althiaprosthetics@gmail.com</Text>
+          <Text color='gray'>Phone Number</Text>
+          <Text>123-456-7890</Text>
+
+        </div>
+      </div>
     </div>
   );
 }

@@ -80,7 +80,7 @@ export default function Team() {
     const [opened, { close, open }] = useDisclosure(false);
     return (
         <>
-        <Container sz="lg">
+        <Container sz="lg" id="team">
         <div>
             <Title order={1} align="center">Meet the Team</Title>
         </div>
