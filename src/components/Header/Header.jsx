@@ -2,9 +2,33 @@ import { Menu, Group, Center, Burger, Container, Text, Button, Divider } from '@
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
 import classes from './Header.module.css';
+import { useState, useEffect } from 'react';
 
+function useScrollDirection() {
+  const [scrollDirection, setScrollDirection] = useState(null);
+  
+  useEffect(() => {
+    let lastScrollY = window.pageYOffset;
 
+    const updateScrollDirection = () => {
+      const scrollY = window.pageYOffset;
+      const direction = scrollY > lastScrollY ? 'down' : 'up';
+      if (direction !== scrollDirection && (scrollY - lastScrollY > 10 || scrollY - lastScrollY < -10)) {
+        setScrollDirection(direction);
+        console.log('scroll direction:', direction)
+      }
+      lastScrollY = scrollY > 0 ? scrollY : 0;
+    };
+    window.addEventListener('scroll', updateScrollDirection);
+    return () => {
+      window.removeEventListener('scroll', updateScrollDirection);
+    }
+  }, [scrollDirection]);
+
+  return scrollDirection
+}
 export function Header() {
+  const scrollDirection = useScrollDirection();
   // Current implementation requires the outermost div inside a component to have an id to jump to that section 
   // (see Mission.jsx and look for the id tagfor an example)
   const scrollToSection = (id) => {
@@ -19,16 +43,9 @@ export function Header() {
         behavior: "smooth"
       })
     }
-
-    // let scrolledY = element.scrollIntoView({behavior: 'smooth' });
-    // if (scrolledY) {
-    //   window.scroll(0, scrolledY - offset)
-    // }
-    // window.scrollBy(0, offset);
   }
   return (
-    // <div className="header">
-    <header className={classes.header}>
+    <header className={`${classes.header} ${scrollDirection === 'down' ? classes.hide : classes.show}`} >
       <Container size='md' className={classes.inner}>
       <div>
         <Text>Althia Prosthetics</Text>

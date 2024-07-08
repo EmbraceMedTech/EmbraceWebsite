@@ -1,13 +1,17 @@
 .header {
   height: rem(56px);
-  /* min-height: rem(100px); */
-  /* margin-bottom: rem(120px); */
   background-color: var(--mantine-color-body);
-  /* border-bottom: rem(1px) solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-4)); */
   position: sticky;
   width: 100%;
   z-index: 1000;
-  top: 0;
+  top: 0px;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.2s;
+}
+
+.hide {
+  top: -100px;
 }
 
 .inner {
@@ -36,17 +40,4 @@
     background-color: var(--mantine-color-blue-filled);
     color: var(--mantine-color-white);
   }
-}
-
-.headerButton {
-  /* display: block;
-  line-height: 1;
-  padding: rem(8px) rem(12px);
-  border-radius: var(--mantine-radius-sm);
-  text-decoration: none;
-  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-0));
-  font-size: var(--mantine-font-size-sm);
-  font-weight: 500; */
-  /* color: black; 
-  text-color: black */
 }
