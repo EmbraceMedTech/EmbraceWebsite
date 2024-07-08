@@ -1,26 +1,16 @@
-import { Container, Group, Anchor, ActionIcon, rem, Divider, Text } from '@mantine/core';
+import { Container, Group, Anchor, ActionIcon, rem, Divider, Text, Button } from '@mantine/core';
 // import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './Footer.module.css';
 import { IconBrandGmail } from '@tabler/icons-react';
+import  scrollToSection  from '../../utils/scrollToSection';
 
-const links = [
-  { link: '#', label: 'Contact' },
-//   { link: '#', label: 'Privacy' },
-//   { link: '#', label: 'Blog' },
-//   { link: '#', label: 'Careers' },
-];
+const links = ['Home', 'Product', 'Mission', 'Team'];
 
 export function Footer() {
   const items = links.map((link) => (
-    <Anchor
-      c="dimmed"
-      key={link.label}
-      href={link.link}
-      onClick={(event) => event.preventDefault()}
-      size="sm"
-    >
-      {link.label}
-    </Anchor>
+    <Button className={classes.footerButton} onClick={() => {scrollToSection(link.toLowerCase())}} variant='transparent' color='black' radius='lg' c="dimmed">
+      {link}
+    </Button>
   ));
 
   const clickGmail = () => {
@@ -33,17 +23,17 @@ export function Footer() {
       <div className={classes.inner}>
         {/* <MantineLogo size={28} /> */}
         <Text size='xl'>Althia Prosthetics</Text>
-        {/* <Group className={classes.links}>{items}</Group>
-        , */}
+        <div>{items}</div>
+        
         {/* <ActionIcon size="lg" color="gray" variant="subtle">
           <IconBrandGmail style={{ width: rem(25), height: rem(25) }} stroke={1.5} onClick={clickGmail}/>
         </ActionIcon> */}
+
         <div>
           <Text color='gray'>Email</Text>
           <Text>althiaprosthetics@gmail.com</Text>
           <Text color='gray'>Phone Number</Text>
           <Text>123-456-7890</Text>
-
         </div>
       </div>
     </div>

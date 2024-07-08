@@ -44,6 +44,7 @@ export function Header() {
       })
     }
   }
+  
   return (
     <header className={`${classes.header} ${scrollDirection === 'down' ? classes.hide : classes.show}`} >
       <Container size='md' className={classes.inner}>

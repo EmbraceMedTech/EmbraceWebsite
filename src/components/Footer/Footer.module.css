@@ -28,3 +28,7 @@
       margin-top: var(--mantine-spacing-md);
     }
   }
+
+.footerButton:hover {
+  text-decoration: underline;
+}
