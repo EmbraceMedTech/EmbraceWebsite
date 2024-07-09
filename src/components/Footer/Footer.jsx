@@ -22,7 +22,7 @@ export function Footer() {
       <Divider my='md' size='xs'/>
       <div className={classes.inner}>
         {/* <MantineLogo size={28} /> */}
-        <Text size='xl'>Althia Prosthetics</Text>
+        <Text size='xl' fw={700}>Althia Medical</Text>
         <div>{items}</div>
         
         {/* <ActionIcon size="lg" color="gray" variant="subtle">

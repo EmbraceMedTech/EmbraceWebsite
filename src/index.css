@@ -55,6 +55,8 @@ code {
   justify-content: center;
   align-items: center;
   color: black;
+
+  
 }
 
 .horizontal_stack {
@@ -62,6 +64,20 @@ code {
   flex-direction: row;
 }
 
+.featuresContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; 
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto; 
+}
+
+.productCard {
+  width: 100%;
+  max-width: 400px; 
+  margin: 0 auto; 
+}
 
 /* 
 .header {
