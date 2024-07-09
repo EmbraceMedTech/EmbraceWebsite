@@ -4,6 +4,7 @@
     align-items: center;  
     padding-top: calc(var(--mantine-spacing-xl) * 4);
     padding-bottom: calc(var(--mantine-spacing-xl) * 4);
+    gap: var(--mantine-spacing-xl);
   }
   
   .content {

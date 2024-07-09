@@ -2,6 +2,7 @@
 import { Card, Image, SimpleGrid, Text, useMantineTheme, Group, Badge, Title } from '@mantine/core';
 import React from 'react'
 import { IconAdjustments, IconRobot } from '@tabler/icons-react';
+import productImage from '../../assets/product.jpg'
 
 const data = [
   {
@@ -51,6 +52,8 @@ export default function Product() {
       <Title order={2} ta="center" mt="sm">
         Generic Product Name
       </Title>
+
+      <Image src={productImage} style={{ maxWidth: '300px', height: 'auto', borderRadius: '10px' }}/>
 
       <Text c="dimmed" ta="center" mt="md">
         Product description, we can say something though I'm not sure what. Something else about the product would be cool here. 

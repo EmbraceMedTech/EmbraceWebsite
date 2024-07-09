@@ -2,12 +2,13 @@ import { Image, Container, Title, Button, Group, Text, List, ThemeIcon, rem } fr
 // import { IconCheck } from '@tabler/icons-react';
 // import image from './image.svg';
 import classes from './Mission.module.css';
+import chadLab from '../../assets/chadlab.jpg'
 
 export default function Mission() {
   return (
     <Container size="md" id='mission'>
       <div className={classes.inner}>
-      <Image src={'placeholder.svg'} className={classes.image} />
+      <Image src={chadLab} className={classes.image} style={{maxWidth: '300px', maxHeight: '500px', width: 'auto', height: 'auto', borderRadius: '10px'}}/>
         <div className={classes.content}>
           <Title className={classes.title}>
             Our <span className={classes.highlight}>Mission</span>
