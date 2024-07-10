@@ -1,79 +1,39 @@
-import { Button, Grid, Image, Container, UnstyledButton, rem, Card, Overlay, Modal, Title, Text, Group } from '@mantine/core';
+import { Button, Grid, Image, Container, UnstyledButton, rem, Card, Overlay, Modal, Title, Text, Group, ActionIcon, Tooltip } from '@mantine/core';
 import { useHover, useEventListener, useDisclosure } from '@mantine/hooks';
 import { useState } from 'react';
+import { IconBrandLinkedin, IconMail } from '@tabler/icons-react';
 
-function C() {
-    return (
-      <Card
-        shadow="sm"
-        padding="xl"
-      >
-        <Card.Section>
-          <Image
-            src='./clab.png'
-            h={160}
-          />
-        </Card.Section>
-  
-        <Text fw={500} size="lg" mt="md">
-          Email: 
-        </Text>
-      </Card>
-    );
-  }
+// document.addEventListener('DOMContentLoaded', function() {
+//     var pa = require('./info.json');
+//     console.log(pa)
+//     var meet_the_team = document.getElementsByClassName("meet_the_team")[0];
+//     for (var key in pa) {
+//         // var name = key
+//         // var id = pa[key]["id"]
+//         // var major = pa[key]["concentration"];
+//         // var college = pa[key]["education"]
+//         // var badge = document.createElement('div');
+//         // badge.className = 'badge';
+//         // badge.innerHTML = 
+//         //     // '<img>' + img + '</img>' + 
+//         //     '<h1>' + name + '</h1>' +
+//         //     '<h2>' + major + '</h2>';
+//         // console.log(badge)
+//         const div = document.createElement('div');
+//         const idSpan = document.createElement('span');
+//         idSpan.textContent = `ID: ${key.id}, `;
+//         div.appendChild(idSpan);
 
-// function Demo() {
-//     const ref = useEventListener('click');
-//     return <Card ref={ref}>Button clicks: {count}</Card>;
-//   }
+//         const nameSpan = document.createElement('span');
+//         nameSpan.textContent = `Name: ${key.major}, `;
+//         div.appendChild(nameSpan);
 
-function Info() {
-    const [opened, { open, close }] = useDisclosure(false);
-
-    return (
-        <>
-        <Modal.Root opened={opened} onClose={close}>
-            <Modal.Overlay />
-            <Modal.Content>
-            <Modal.Header>
-                <Modal.Title>Althia Prosthetics</Modal.Title>
-                <Modal.CloseButton />
-            </Modal.Header>
-            <Modal.Body>
-                <Container span={1}>
-                    <Text size="xl">Christian Labrador</Text>
-                </Container>
-                <Container span={1}>
-                    <Text size="l">Brown University, Sc.B. Mechanical Engineering</Text>
-                </Container>
-                <Container span={1}>
-                    <Text size="l">Minnesota</Text>
-                </Container>
-            </Modal.Body>
-            </Modal.Content>
-        </Modal.Root>
-
-        <Button onClick={open}>Open modal</Button>
-        </>
-    );
-}
-
-var pa = require('./info.json');
-var team_member_info = document.getElementsByClassName("meet-the-team")[0];
-for (var key in team_member_info) {
-    for (var i = 0; i < team_member_info[key].length; i++) {
-        var name = team_member_info[key][i].Name;
-        var major = team_member_info[key][i].Major;
-        var img = team_member_info[key][i].Image;
-        var badge = document.createElement('div');
-        badge.className = 'badge';
-        badge.innerHTML = 
-            // '<img>' + img + '</img>' + 
-            '<h1>' + name + '</h1>' +
-            '<h2>' + major + '</h2>';
-        document.getElementById(key).appendChild(badge);    
-    }
-}
+//         const ageSpan = document.createElement('span');
+//         ageSpan.textContent = `Age: ${key.college}`;
+//         div.appendChild(ageSpan);
+//         meet_the_team.appendChild(div);    
+//     }
+// });
 
 export default function Team() {
     const { hovered, ref } = useHover();
@@ -92,20 +52,54 @@ export default function Team() {
         </Container>
         <Container size="xl">
             <div>
-                <Grid>
-                    <Grid.Col span={4} style={{ minHeight: rem(200) }}>
-                        <Image src={require('./clab.png')} />
+                <Grid justify="space-between" align="stretch">
+                    <Grid.Col span={3} style={{ minHeight: rem(200) }}>
+                        <Image src={require('./clab.png')} width="200px" height="300px" radius="md"/>
                         <Text size="xl" align="center" fw={700}>Christian Labrador</Text>
-                        <Text size="m" align="center">Mechanical Engineering, 2024</Text>
                         <Text size="m" align="center">Brown University</Text>
-                        <Group align="center">
-                            <Button variant="light">LinkedIn</Button>
-                            <Button variant="light">Email</Button>
+                        <Text size="m" align="center">Mechanical Engineering</Text>
+                        <Group justify="center">
+                            <a href="https://www.linkedin.com/in/christian-labrador-1ba425206/">
+                                <IconBrandLinkedin/>
+                            </a>
+                            <Tooltip label="Email copied!">
+                                <Button variant="light">
+                                    <IconMail/>
+                                </Button>
+                            </Tooltip>
                         </Group>
                     </Grid.Col>
-                    <Grid.Col>
-                        <div class="meet-the-team"></div>
+                    <Grid.Col span={3} style={{ minHeight: rem(200) }}>
+                        <Image src={require('./Joseph Headshot.jpeg')} width="200px" height="300px" radius="md"/>
+                        <Text size="xl" align="center" fw={700}>Joseph Dewan</Text>
+                        <Text size="m" align="center">Brown University</Text>
+                        <Text size="m" align="center">Mechanical Engineering</Text>
+                        <Group justify="center">
+                            <a href="https://www.linkedin.com/in/joseph-dewan">
+                                <IconBrandLinkedin/>
+                            </a>
+                            <Button variant="light">
+                                <IconMail/>
+                            </Button>
+                        </Group>
                     </Grid.Col>
+                    <Grid.Col span={3} style={{ minHeight: rem(200) }}>
+                        <Image src={require('./Paula_Headshot.jpeg')} width="200px" height="300px" radius="md"/>
+                        <Text size="xl" align="center" fw={700}>Paula Rodriguez-Vilaboa</Text>
+                        <Text size="m" align="center">Brown University</Text>
+                        <Text size="m" align="center">Mechanical Engineering</Text>
+                        <Group justify="center">
+                            <a href="https://www.linkedin.com/in/paula-vilaboa">
+                                <IconBrandLinkedin/>
+                            </a>
+                            <Button variant="light">
+                                <IconMail/>
+                            </Button>
+                        </Group>
+                    </Grid.Col>
+                    {/* <Grid.Col>
+                        <div class="meet-the-team"></div>
+                    </Grid.Col> */}
                     {/* <Grid.Col span={4} style={{ minHeight: rem(200) }}>
                     <Modal opened={opened} onClose={close} size="auto" title="Modal size auto" overlayProps={{backgroundOpacity: 0.55, blur: 3,}}></Modal>
                     <div ref={ref}>
@@ -127,6 +121,9 @@ export default function Team() {
                 </Grid>
             </div>
         </Container>
+            {/* <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+            <div id="meet_the_team" defer></div>
+            <script type="text/javascript" src="./helper.js"></script> */}
         </>
     )
 }
