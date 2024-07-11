@@ -12,7 +12,7 @@ export default function Home() {
       <video className="background_video" src={backgroundVideo} autoPlay loop muted />
       <div className='content'>
         <Title>Althia Medical</Title>
-        <p>We've designed a new type of prosthetic socket to improve the lives of these patients.</p>
+        <p>Improve the lives of amputees</p>
       </div>
     </div>
 );
