@@ -3,6 +3,8 @@ import { useHover, useEventListener, useDisclosure } from '@mantine/hooks';
 import { useState } from 'react';
 import { IconBrandLinkedin, IconMail, IconCheck } from '@tabler/icons-react';
 
+import classes from './Team.module.css';
+
 // document.addEventListener('DOMContentLoaded', function() {
 //     var pa = require('./info.json');
 //     console.log(pa)
@@ -42,7 +44,7 @@ export default function Team() {
         <>
         <Container sz="lg" id="team">
         <div>
-            <Title order={1} align="center">Meet the Team</Title>
+            <Title order={1} align="center" className={classes.subheader}>Meet the Team</Title>
         </div>
         </Container>
         <Container sz="lg">
@@ -60,16 +62,16 @@ export default function Team() {
                         <Text size="m" align="center">Mechanical Engineering</Text>
                         <Group justify="center">
                             <a href="https://www.linkedin.com/in/christian-labrador-1ba425206/">
-                                <IconBrandLinkedin/>
+                                <IconBrandLinkedin className={classes.linkedin_icon}/>
                             </a>
                             <CopyButton value="christianl.althia@gmail.com" timeout={2000}>
                                 {({ copied, copy }) => (
                                     <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="right">
                                     <ActionIcon color={copied ? 'teal' : 'gray'} variant="subtle" onClick={copy}>
                                         {copied ? (
-                                        <IconCheck/>
+                                        <IconCheck className={classes.email_icon}/>
                                         ) : (
-                                        <IconMail/>
+                                        <IconMail className={classes.email_icon}/>
                                         )}
                                     </ActionIcon>
                                     </Tooltip>
@@ -84,16 +86,16 @@ export default function Team() {
                         <Text size="m" align="center">Mechanical Engineering</Text>
                         <Group justify="center">
                             <a href="https://www.linkedin.com/in/joseph-dewan">
-                                <IconBrandLinkedin/>
+                                <IconBrandLinkedin className={classes.linkedin_icon}/>
                             </a>
                             <CopyButton value="joseph.althia@gmail.com" timeout={2000}>
                                 {({ copied, copy }) => (
                                     <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="right">
                                     <ActionIcon color={copied ? 'teal' : 'gray'} variant="subtle" onClick={copy}>
                                         {copied ? (
-                                        <IconCheck/>
+                                        <IconCheck className={classes.email_icon}/>
                                         ) : (
-                                        <IconMail/>
+                                        <IconMail className={classes.email_icon}/>
                                         )}
                                     </ActionIcon>
                                     </Tooltip>
@@ -108,16 +110,16 @@ export default function Team() {
                         <Text size="m" align="center">Mechanical Engineering</Text>
                         <Group justify="center">
                             <a href="https://www.linkedin.com/in/paula-vilaboa">
-                                <IconBrandLinkedin/>
+                                <IconBrandLinkedin className={classes.linkedin_icon}/>
                             </a>
                             <CopyButton value="paula_rodriguez-_vilaboa@alumni.brown.edu" timeout={2000}>
                                 {({ copied, copy }) => (
                                     <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="right">
                                     <ActionIcon color={copied ? 'teal' : 'gray'} variant="subtle" onClick={copy}>
                                         {copied ? (
-                                        <IconCheck/>
+                                        <IconCheck className={classes.email_icon}/>
                                         ) : (
-                                        <IconMail/>
+                                        <IconMail className={classes.email_icon}/>
                                         )}
                                     </ActionIcon>
                                     </Tooltip>

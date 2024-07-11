@@ -50,13 +50,13 @@ export default function Product() {
       </Group>
 
       <Title order={2} ta="center" mt="sm">
-        Generic Product Name
+        Althia Adjustable Socket
       </Title>
 
       <Image src={productImage} style={{ maxWidth: '300px', height: 'auto', borderRadius: '10px' }}/>
 
       <Text c="dimmed" ta="center" mt="md">
-        Product description, we can say something though I'm not sure what. Something else about the product would be cool here. 
+        Our patent-pending technology allows for a better fitting prosthesis, saving amputees from pain. 
       </Text>
 
         <SimpleGrid cols={{ base: 1, md: 2 }} spacing="xl" mt={50}>

@@ -33,7 +33,7 @@ export function Footer() {
           <Text color='gray'>Email</Text>
           <Text>althiaprosthetics@gmail.com</Text>
           <Text color='gray'>Phone Number</Text>
-          <Text>123-456-7890</Text>
+          <Text>763-232-6891</Text>
         </div>
       </div>
     </div>
