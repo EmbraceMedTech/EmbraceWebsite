@@ -1,7 +1,7 @@
-import { Button, Grid, Image, Container, UnstyledButton, rem, Card, Overlay, Modal, Title, Text, Group, ActionIcon, Tooltip } from '@mantine/core';
+import { Button, Grid, Image, Container, UnstyledButton, rem, Card, Overlay, Modal, Title, Text, Group, ActionIcon, Tooltip, CopyButton } from '@mantine/core';
 import { useHover, useEventListener, useDisclosure } from '@mantine/hooks';
 import { useState } from 'react';
-import { IconBrandLinkedin, IconMail } from '@tabler/icons-react';
+import { IconBrandLinkedin, IconMail, IconCheck } from '@tabler/icons-react';
 
 // document.addEventListener('DOMContentLoaded', function() {
 //     var pa = require('./info.json');
@@ -62,11 +62,19 @@ export default function Team() {
                             <a href="https://www.linkedin.com/in/christian-labrador-1ba425206/">
                                 <IconBrandLinkedin/>
                             </a>
-                            <Tooltip label="Email copied!">
-                                <Button variant="light">
-                                    <IconMail/>
-                                </Button>
-                            </Tooltip>
+                            <CopyButton value="christianl.althia@gmail.com" timeout={2000}>
+                                {({ copied, copy }) => (
+                                    <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="right">
+                                    <ActionIcon color={copied ? 'teal' : 'gray'} variant="subtle" onClick={copy}>
+                                        {copied ? (
+                                        <IconCheck/>
+                                        ) : (
+                                        <IconMail/>
+                                        )}
+                                    </ActionIcon>
+                                    </Tooltip>
+                                )}
+                            </CopyButton>
                         </Group>
                     </Grid.Col>
                     <Grid.Col span={3} style={{ minHeight: rem(200) }}>
@@ -78,9 +86,19 @@ export default function Team() {
                             <a href="https://www.linkedin.com/in/joseph-dewan">
                                 <IconBrandLinkedin/>
                             </a>
-                            <Button variant="light">
-                                <IconMail/>
-                            </Button>
+                            <CopyButton value="joseph.althia@gmail.com" timeout={2000}>
+                                {({ copied, copy }) => (
+                                    <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="right">
+                                    <ActionIcon color={copied ? 'teal' : 'gray'} variant="subtle" onClick={copy}>
+                                        {copied ? (
+                                        <IconCheck/>
+                                        ) : (
+                                        <IconMail/>
+                                        )}
+                                    </ActionIcon>
+                                    </Tooltip>
+                                )}
+                            </CopyButton>
                         </Group>
                     </Grid.Col>
                     <Grid.Col span={3} style={{ minHeight: rem(200) }}>
@@ -92,9 +110,19 @@ export default function Team() {
                             <a href="https://www.linkedin.com/in/paula-vilaboa">
                                 <IconBrandLinkedin/>
                             </a>
-                            <Button variant="light">
-                                <IconMail/>
-                            </Button>
+                            <CopyButton value="paula_rodriguez-_vilaboa@alumni.brown.edu" timeout={2000}>
+                                {({ copied, copy }) => (
+                                    <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="right">
+                                    <ActionIcon color={copied ? 'teal' : 'gray'} variant="subtle" onClick={copy}>
+                                        {copied ? (
+                                        <IconCheck/>
+                                        ) : (
+                                        <IconMail/>
+                                        )}
+                                    </ActionIcon>
+                                    </Tooltip>
+                                )}
+                            </CopyButton>
                         </Group>
                     </Grid.Col>
                     {/* <Grid.Col>
