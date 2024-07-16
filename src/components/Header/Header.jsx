@@ -49,7 +49,7 @@ export function Header() {
     <header className={`${classes.header} ${scrollDirection === 'down' ? classes.hide : classes.show}`} >
       <Container size='md' className={classes.inner}>
       <div>
-        <Text fw={700} size='lg'>Althia Medical</Text>
+        <Text fw={700} size='lg'>Embrace Medical</Text>
       </div>
 
       <Group gap={5} visibleFrom="xs">

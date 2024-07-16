@@ -11,7 +11,7 @@ export default function Home() {
       <div className='overlay'></div>
       <video className="background_video" src={backgroundVideo} autoPlay loop muted />
       <div className='content'>
-        <Title>Althia Medical</Title>
+        <Title>Embrace Medical</Title>
         <p>Improve the lives of amputees</p>
       </div>
     </div>

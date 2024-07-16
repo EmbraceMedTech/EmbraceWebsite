@@ -1,4 +1,3 @@
-// import classes from './Home.module.css';
 import { Card, Image, SimpleGrid, Text, useMantineTheme, Group, Badge, Title } from '@mantine/core';
 import React from 'react'
 import { IconAdjustments, IconRobot } from '@tabler/icons-react';
@@ -45,12 +44,12 @@ export default function Product() {
         </div> */}
         <Group justify="center">
         <Badge variant="filled" size="lg">
-          Althia Medical
+          Embrace Medical
         </Badge>
       </Group>
 
       <Title order={2} ta="center" mt="sm">
-        Althia Adjustable Socket
+        Embrace Adjustable Socket
       </Title>
 
       <Image src={productImage} style={{ maxWidth: '300px', height: 'auto', borderRadius: '10px' }}/>
