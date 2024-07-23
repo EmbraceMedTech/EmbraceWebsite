@@ -23,8 +23,8 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftp.embracemedtech.com
-        username: ${{ secrets.FTP_EMBRACE_USERNAME }}
-        password: ${{ secrets.FTP_EMBRACE_PASSWORD }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./build/
         
         
