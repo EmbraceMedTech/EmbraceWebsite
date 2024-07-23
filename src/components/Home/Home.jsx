@@ -1,4 +1,4 @@
-import { Image, Container, Title, Button, Group, Text, List, ThemeIcon, rem } from '@mantine/core';
+import { Title } from '@mantine/core';
 // import classes from './Home.module.css';
 import React from 'react'
 import backgroundVideo from '../../assets/bv1.mp4'

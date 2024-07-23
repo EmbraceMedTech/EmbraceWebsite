@@ -2,21 +2,25 @@
     "Christian Labrador" : {
         "id" : 1,
         "education" : "Brown University",
-        "concentration" : "Mechanical Engineering"
+        "concentration" : "Mechanical Engineering",
+        "image_path": "/memberImages/clab.png",
+        "linkedin": "https://www.linkedin.com/in/christian-labrador-1ba425206/",
+        "email": "christianl.althia@gmail.com"
     },
     "Joseph Dewan" : {
         "id" : 2,
         "education" : "Brown University",
-        "concentration" : "Mechanical Engineering"
+        "concentration" : "Mechanical Engineering",
+        "image_path": "/memberImages/Joseph Headshot.jpeg",
+        "linkedin": "https://www.linkedin.com/in/joseph-dewan",
+        "email": "joseph.althia@gmail.com"
     },
     "Paula Rodriguez-Vilaboa" : {
         "id" : 3,
         "education" : "Brown University",
-        "concentration" : "Mechanical Engineering"
-    },
-    "Gabrielle Shieh" : {
-        "id" : 4,
-        "education" : "Brown University",
-        "concentration" : "Computer Science"
+        "concentration" : "Mechanical Engineering",
+        "image_path": "./memberImages/Paula_Headshot.jpeg",
+        "linkedin": "https://www.linkedin.com/in/paula-vilaboa",
+        "email": "paula_rodriguez-_vilaboa@alumni.brown.edu"
     }
 }

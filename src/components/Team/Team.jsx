@@ -1,9 +1,14 @@
 import { Button, Grid, Image, Container, UnstyledButton, rem, Card, Overlay, Modal, Title, Text, Group, ActionIcon, Tooltip, CopyButton } from '@mantine/core';
 import { useHover, useEventListener, useDisclosure } from '@mantine/hooks';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { IconBrandLinkedin, IconMail, IconCheck } from '@tabler/icons-react';
 
 import classes from './Team.module.css';
+import memberData from './info.json';
+// import image from './images/clab.png';
+console.log(memberData);
+console.log(memberData['Christian Labrador'].key);
+// console.log("calb", image);
 
 // document.addEventListener('DOMContentLoaded', function() {
 //     var pa = require('./info.json');
@@ -40,6 +45,19 @@ import classes from './Team.module.css';
 export default function Team() {
     const { hovered, ref } = useHover();
     const [opened, { close, open }] = useDisclosure(false);
+    const [membersArray, setMembersArray] = useState([]);
+    let names = Object.keys(memberData);
+    const fetchMembersData = async () => {
+        // Simulate a fetch call
+        // const fetchedData = await fetch('your-api-endpoint');
+        const jsonData = require('./info.json');
+        setMembersArray(Object.values(jsonData));
+    };
+
+    useEffect(() => {
+        fetchMembersData();
+    }, []); // Empty dependency array means this runs once on mount
+
     return (
         <>
         <Container sz="lg" id="team">
@@ -54,17 +72,20 @@ export default function Team() {
         </Container>
         <Container size="xl">
             <div>
-                <Grid justify="space-between" align="stretch">
-                    <Grid.Col span={3} style={{ minHeight: rem(200) }}>
-                        <Image src={require('./clab.png')} width="200px" height="300px" radius="md"/>
-                        <Text size="xl" align="center" fw={700}>Christian Labrador</Text>
-                        <Text size="m" align="center">Brown University</Text>
-                        <Text size="m" align="center">Mechanical Engineering</Text>
+            <Grid justify="space-between" align="stretch">
+                {membersArray.map((member, index) => (
+                    
+                    <Grid.Col span={3} style={{ minHeight: rem(200) }} key={index}>
+                        {/* <img src={`${member.image}`} alt={`Member ${index}`} /> */}
+                        <Image src={member.image_path} width="200px" height="300px" radius="md" alt={`Member ${index}`}/>
+                        <Text size="xl" align="center" fw={700}>{names[index]}</Text>
+                        <Text size="m" align="center">{member.education}</Text>
+                        <Text size="m" align="center">{member.concentration}</Text>
                         <Group justify="center">
-                            <a href="https://www.linkedin.com/in/christian-labrador-1ba425206/">
+                            <a href={member.linkedin}>
                                 <IconBrandLinkedin className={classes.linkedin_icon}/>
                             </a>
-                            <CopyButton value="christianl.althia@gmail.com" timeout={2000}>
+                            <CopyButton value={member.email} timeout={2000}>
                                 {({ copied, copy }) => (
                                     <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="right">
                                     <ActionIcon color={copied ? 'teal' : 'gray'} variant="subtle" onClick={copy}>
@@ -79,76 +100,9 @@ export default function Team() {
                             </CopyButton>
                         </Group>
                     </Grid.Col>
-                    <Grid.Col span={3} style={{ minHeight: rem(200) }}>
-                        <Image src={require('./Joseph Headshot.jpeg')} width="200px" height="300px" radius="md"/>
-                        <Text size="xl" align="center" fw={700}>Joseph Dewan</Text>
-                        <Text size="m" align="center">Brown University</Text>
-                        <Text size="m" align="center">Mechanical Engineering</Text>
-                        <Group justify="center">
-                            <a href="https://www.linkedin.com/in/joseph-dewan">
-                                <IconBrandLinkedin className={classes.linkedin_icon}/>
-                            </a>
-                            <CopyButton value="joseph.althia@gmail.com" timeout={2000}>
-                                {({ copied, copy }) => (
-                                    <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="right">
-                                    <ActionIcon color={copied ? 'teal' : 'gray'} variant="subtle" onClick={copy}>
-                                        {copied ? (
-                                        <IconCheck className={classes.email_icon}/>
-                                        ) : (
-                                        <IconMail className={classes.email_icon}/>
-                                        )}
-                                    </ActionIcon>
-                                    </Tooltip>
-                                )}
-                            </CopyButton>
-                        </Group>
-                    </Grid.Col>
-                    <Grid.Col span={3} style={{ minHeight: rem(200) }}>
-                        <Image src={require('./Paula_Headshot.jpeg')} width="200px" height="300px" radius="md"/>
-                        <Text size="xl" align="center" fw={700}>Paula Rodriguez-Vilaboa</Text>
-                        <Text size="m" align="center">Brown University</Text>
-                        <Text size="m" align="center">Mechanical Engineering</Text>
-                        <Group justify="center">
-                            <a href="https://www.linkedin.com/in/paula-vilaboa">
-                                <IconBrandLinkedin className={classes.linkedin_icon}/>
-                            </a>
-                            <CopyButton value="paula_rodriguez-_vilaboa@alumni.brown.edu" timeout={2000}>
-                                {({ copied, copy }) => (
-                                    <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="right">
-                                    <ActionIcon color={copied ? 'teal' : 'gray'} variant="subtle" onClick={copy}>
-                                        {copied ? (
-                                        <IconCheck className={classes.email_icon}/>
-                                        ) : (
-                                        <IconMail className={classes.email_icon}/>
-                                        )}
-                                    </ActionIcon>
-                                    </Tooltip>
-                                )}
-                            </CopyButton>
-                        </Group>
-                    </Grid.Col>
-                    {/* <Grid.Col>
-                        <div class="meet-the-team"></div>
-                    </Grid.Col> */}
-                    {/* <Grid.Col span={4} style={{ minHeight: rem(200) }}>
-                    <Modal opened={opened} onClose={close} size="auto" title="Modal size auto" overlayProps={{backgroundOpacity: 0.55, blur: 3,}}></Modal>
-                    <div ref={ref}>
-                        {hovered ? <button onClick={open} style={{height:"250px",width:"250px"}}><Image src={require('./clab.png')} border="0" width="60"/> </button>: <button style={{height:"200px",width:"200px"}}><Image src={require('./clab.png')} border="0" width="60"/> </button>}
-                    </div>
-                    </Grid.Col>
-                    <Grid.Col span={4} style={{ minHeight: rem(120) }}>
-                        <Modal opened={opened} onClose={close} size="auto" title="Althia Prosthetics" overlayProps={{backgroundOpacity: 0.002, blur: 3,}}><Text size="xl">Christian Labrador</Text></Modal>
-                        <Button onClick={open}>Open modal</Button>
-                    </Grid.Col>
-                    <Grid.Col span={4} style={{ minHeight: rem(120) }}>
-                        <Modal opened={opened} onClose={close} size="auto" title="Althia Prosthetics" overlayProps={{backgroundOpacity: 0.002, blur: 3,}}><Text size="xl">Christian Labrador</Text></Modal>
-                        <Button onClick={open}>Open modal</Button>
-                    </Grid.Col>
-                    <Grid.Col span={4} style={{ minHeight: rem(120) }}>
-                        <Modal opened={opened} onClose={close} size="auto" title="Althia Prosthetics" overlayProps={{backgroundOpacity: 0.002, blur: 3,}}><Text size="xl">Christian Labrador</Text></Modal>
-                        <Button onClick={open}>Open modal</Button>
-                    </Grid.Col> */}
-                </Grid>
+                ))}
+            </Grid>
+              
             </div>
         </Container>
             {/* <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
@@ -157,3 +111,15 @@ export default function Team() {
         </>
     )
 }
+
+/*
+Old json Gabrielle section IM TOO LAZY TO CODE RENDER 4 PEOPLE SORRY
+    "Gabrielle Shieh" : {
+        "id" : 4,
+        "education" : "Brown University",
+        "concentration" : "Computer Science",
+        "image_path": "/memberImages/clab.png",
+        "linkedin": "https://www.linkedin.com/in/paula-vilaboa",
+        "email": "paula_rodriguez-_vilaboa@alumni.brown.edu"
+    }
+*/
