@@ -19,6 +19,9 @@ export default function Mission() {
           <Text c="dimmed" mt="md">
            With our automatically adjusting prosthetic socket, we will be able to let amputees focus on doing what they love, and give them their mobility back. 
           </Text>
+          <Text>
+            test div
+          </Text>
         </div>
       </div>
     </Container>
