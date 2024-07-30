@@ -29,6 +29,8 @@ function useScrollDirection() {
 }
 export function Header() {
   const scrollDirection = useScrollDirection();
+  const [opened, { toggle }] = useDisclosure(false);
+  // const [active, setActive] = useState(links[0].link);
   // Current implementation requires the outermost div inside a component to have an id to jump to that section 
   // (see Mission.jsx and look for the id tagfor an example)
   const scrollToSection = (id) => {
@@ -47,11 +49,22 @@ export function Header() {
   
   return (
     <header className={`${classes.header} ${scrollDirection === 'down' ? classes.hide : classes.show}`} >
-      <Container size='md' className={classes.inner}>
+      <Container size='sm' className={classes.inner}>
       <div>
         <Text fw={700} size='lg'>Embrace Medical</Text>
       </div>
-
+      <Menu hiddenFrom="xs">
+        <Menu.Target>
+          <Burger aria-label="Toggle menu" />
+        </Menu.Target>
+        <Menu.Dropdown>
+          <Menu.Item onClick={() => {scrollToSection('home')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Home</Menu.Item>
+          <Menu.Item onClick={() => {scrollToSection('product')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Product</Menu.Item>
+          <Menu.Item onClick={() => {scrollToSection('mission')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Mission</Menu.Item>
+          <Menu.Item onClick={() => {scrollToSection('team')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Team</Menu.Item>
+        </Menu.Dropdown>
+      </Menu>
+      
       <Group gap={5} visibleFrom="xs">
           <Button onClick={() => {scrollToSection('home')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Home</Button>
           <Button onClick={() => {scrollToSection('product')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Product</Button>
