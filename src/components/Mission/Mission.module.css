@@ -1,12 +1,17 @@
 .inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;  
-    padding-top: calc(var(--mantine-spacing-xl) * 4);
-    padding-bottom: calc(var(--mantine-spacing-xl) * 4);
-    gap: var(--mantine-spacing-xl);
-    /* overflow: hidden; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+  padding-top: calc(var(--mantine-spacing-xl) * 4);
+  padding-bottom: calc(var(--mantine-spacing-xl) * 4);
+  gap: var(--mantine-spacing-xl);
+  overflow: hidden;
+  flex-direction: row; /* Default to row for wider screens */
+
+  @media (max-width: 768px) {
+      flex-direction: column; /* Change to column for smaller screens */
   }
+}
   
   .content {
     max-width: rem(480px);
