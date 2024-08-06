@@ -77,7 +77,7 @@ export default function Team() {
                     
                     <Grid.Col span={3} style={{ minHeight: rem(200) }} key={index}>
                         {/* <img src={`${member.image}`} alt={`Member ${index}`} /> */}
-                        <Image src={member.image_path} width="200px" height="300px" radius="md" alt={`Member ${index}`}/>
+                        <Image src={member.image_path} width="100%" height="auto" radius="md" alt={`Member ${index}`}/>
                         <Text size="xl" align="center" fw={700}>{names[index]}</Text>
                         <Text size="m" align="center">{member.education}</Text>
                         <Text size="m" align="center">{member.concentration}</Text>
