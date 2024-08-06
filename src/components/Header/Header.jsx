@@ -36,12 +36,10 @@ export function Header() {
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      const offset = 75;
       const elementPos = element.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPos = elementPos - offset;
 
       window.scrollTo({
-        top: offsetPos,
+        top: elementPos,
         behavior: "smooth"
       })
     }
