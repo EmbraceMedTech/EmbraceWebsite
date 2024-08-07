@@ -12,7 +12,7 @@ export default function Home() {
       <video className="background_video" src={backgroundVideo} autoPlay loop muted />
       <div className='content'>
         <Title>Embrace Medical</Title>
-        <p>Improve the lives of amputees</p>
+        <p>Bringing mobility back to amputees</p>
       </div>
     </div>
 );
