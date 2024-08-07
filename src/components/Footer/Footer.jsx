@@ -22,7 +22,7 @@ export function Footer() {
       <Divider my='md' size='xs'/>
       <div className={classes.inner}>
         {/* <MantineLogo size={28} /> */}
-        <Text size='xl' fw={700}>Embrace Medical</Text>
+        <Text size='xl' fw={700}>Embrace Medical Technology</Text>
         <div>{items}</div>
         
         {/* <ActionIcon size="lg" color="gray" variant="subtle">
@@ -31,7 +31,8 @@ export function Footer() {
 
         <div>
           <Text color='gray'>Email</Text>
-          <Text>althiaprosthetics@gmail.com</Text>
+          <Text>christianl@embracemedtech.com</Text>
+          <Text>josephd@embracemedtech.com</Text>
           <Text color='gray'>Phone Number</Text>
           <Text>763-232-6891</Text>
         </div>

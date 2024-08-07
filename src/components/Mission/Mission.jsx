@@ -2,13 +2,13 @@ import { Image, Container, Title, Button, Group, Text, List, ThemeIcon, rem } fr
 // import { IconCheck } from '@tabler/icons-react';
 // import image from './image.svg';
 import classes from './Mission.module.css';
-import chadLab from '../../assets/chadlab.jpg'
+// import missionPic from '../../assets/IMG_4122.jpg'
 
 export default function Mission() {
   return (
     <Container size="md" id='mission'>
       <div className={classes.inner}>
-      <Image src={require('./mission_pic.JPG')} className={classes.image} style={{maxWidth: '500px', maxHeight: '500px', width: 'auto', height: 'auto', borderRadius: '10px'}}/>
+      <Image src={require("./IMG_4122.jpg")} className={classes.image} style={{maxWidth: '500px', maxHeight: '500px', width: 'auto', height: 'auto', borderRadius: '10px'}}/>
         <div className={classes.content}>
           <Title className={classes.title}>
             Our Mission

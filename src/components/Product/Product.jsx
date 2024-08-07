@@ -1,7 +1,7 @@
 import { Card, Image, SimpleGrid, Text, useMantineTheme, Group, Badge, Title } from '@mantine/core';
 import React from 'react'
 import { IconAdjustments, IconRobot } from '@tabler/icons-react';
-import productImage from '../../assets/product.jpg'
+import productImage from '../../assets/IMG_4194.jpg'
 
 const data = [
   {

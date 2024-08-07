@@ -49,7 +49,7 @@ export function Header() {
     <header className={`${classes.header} ${scrollDirection === 'down' ? classes.hide : classes.show}`} >
       <Container size='sm' className={classes.inner}>
       <div>
-        <Text fw={700} size='lg'>Embrace Medical</Text>
+        <Text fw={700} size='lg'>Embrace Medical Technology</Text>
       </div>
       <Menu hiddenFrom="xs">
         <Menu.Target>
