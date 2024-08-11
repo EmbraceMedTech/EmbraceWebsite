@@ -72,7 +72,7 @@ export default function Team() {
         </Container>
         <Container size="xl">
             <div>
-            <Grid justify="space-between" align="stretch">
+            <Grid justify="space-around" align="stretch">
                 {membersArray.map((member, index) => (
                     
                     <Grid.Col span={3} style={{ minHeight: rem(200) }} key={index}>
