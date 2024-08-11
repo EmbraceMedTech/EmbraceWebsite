@@ -1,4 +1,4 @@
-import { Button, Grid, Image, Container, UnstyledButton, rem, Card, Overlay, Modal, Title, Text, Group, ActionIcon, Tooltip, CopyButton } from '@mantine/core';
+import { Anchor, Button, Grid, Image, Container, UnstyledButton, rem, Card, Overlay, Modal, Title, Text, Group, ActionIcon, Tooltip, CopyButton } from '@mantine/core';
 import { useHover, useEventListener, useDisclosure } from '@mantine/hooks';
 import { useState, useEffect } from 'react';
 import { IconBrandLinkedin, IconMail, IconCheck } from '@tabler/icons-react';
@@ -85,6 +85,10 @@ export default function Team() {
                             <a href={member.linkedin}>
                                 <IconBrandLinkedin className={classes.linkedin_icon}/>
                             </a>
+                            {/* <a href={`mailto:${member.email}`} className="btn btn--contact">Contact</a> */}
+                                <Anchor href={`mailto:${member.email}`} target="_blank">
+                                    Contact
+                                </Anchor>
                             <CopyButton value={member.email} timeout={2000}>
                                 {({ copied, copy }) => (
                                     <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="right">
