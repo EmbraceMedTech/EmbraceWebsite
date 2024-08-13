@@ -92,3 +92,13 @@ code {
   position: sticky;
   top: 1rem;
 } */
+
+.product-image-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto; 
+  align-items: center;
+}

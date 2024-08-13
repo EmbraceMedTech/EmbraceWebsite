@@ -51,16 +51,15 @@ export default function Product() {
       <Title order={2} ta="center" mt="sm">
         Embrace Adjustable Socket
       </Title>
-
-      <Image src={productImage} style={{ maxWidth: '300px', height: 'auto', borderRadius: '10px' }}/>
-
       <Text c="dimmed" ta="center" mt="md">
         Our patent-pending technology allows for a better fitting prosthesis, saving amputees from pain. 
       </Text>
-
-        <SimpleGrid cols={{ base: 1, md: 2 }} spacing="xl" mt={50}>
+      <div className="product-image-cards">
+      <Image src={productImage} style={{ maxWidth: 'auto', height: '300px', borderRadius: '10px' }}/>
+        <SimpleGrid cols={{ base: 2, md: 1 }} spacing="xl" mt={50}>
         {features}
       </SimpleGrid>
+      </div>
       </div>
     </div>
 );
