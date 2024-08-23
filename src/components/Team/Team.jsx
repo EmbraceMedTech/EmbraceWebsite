@@ -82,13 +82,7 @@ export default function Team() {
                         <Text size="m" align="center">{member.education}</Text>
                         <Text size="m" align="center">{member.concentration}</Text>
                         <Group justify="center">
-                            <a href={member.linkedin}>
-                                <IconBrandLinkedin className={classes.linkedin_icon}/>
-                            </a>
-                            {/* <a href={`mailto:${member.email}`} className="btn btn--contact">Contact</a> */}
-                                <Anchor href={`mailto:${member.email}`} target="_blank">
-                                    Contact
-                                </Anchor>
+                            <Text size="m" align="center">{member.email}</Text>
                             <CopyButton value={member.email} timeout={2000}>
                                 {({ copied, copy }) => (
                                     <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="right">
@@ -102,6 +96,9 @@ export default function Team() {
                                     </Tooltip>
                                 )}
                             </CopyButton>
+                            <a href={member.linkedin}>
+                                <IconBrandLinkedin className={classes.linkedin_icon}/>
+                            </a>
                         </Group>
                     </Grid.Col>
                 ))}

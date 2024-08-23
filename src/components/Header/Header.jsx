@@ -2,6 +2,7 @@ import { Menu, Group, Center, Burger, Container, Text, Button, Divider } from '@
 import { useDisclosure } from '@mantine/hooks';
 import { IconChevronDown } from '@tabler/icons-react';
 import classes from './Header.module.css';
+import Contact from '../Contact/Contact';
 import { useState, useEffect } from 'react';
 
 function useScrollDirection() {
@@ -27,6 +28,9 @@ function useScrollDirection() {
 
   return scrollDirection
 }
+
+
+
 export function Header() {
   const scrollDirection = useScrollDirection();
   const [opened, { toggle }] = useDisclosure(false);
@@ -44,10 +48,22 @@ export function Header() {
       })
     }
   }
+
+  const [showModal, setShowModal] = useState(false);
+
+  const openModal = () => {
+    console.log('Opening modal');
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    console.log('Closing modal');
+    setShowModal(false);
+  };
   
   return (
     <header className={`${classes.header} ${scrollDirection === 'down' ? classes.hide : classes.show}`} >
-      <Container size='sm' className={classes.inner}>
+      <Container className={classes.inner}>
       <div>
         <Text fw={700} size='lg'>Embrace Medical Technology</Text>
       </div>
@@ -60,6 +76,7 @@ export function Header() {
           <Menu.Item onClick={() => {scrollToSection('product')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Product</Menu.Item>
           <Menu.Item onClick={() => {scrollToSection('mission')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Mission</Menu.Item>
           <Menu.Item onClick={() => {scrollToSection('team')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Team</Menu.Item>
+          <Menu.Item onClick={() => {openModal}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Contact Us</Menu.Item>
         </Menu.Dropdown>
       </Menu>
       
@@ -68,9 +85,21 @@ export function Header() {
           <Button onClick={() => {scrollToSection('product')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Product</Button>
           <Button onClick={() => {scrollToSection('mission')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Mission</Button>
           <Button onClick={() => {scrollToSection('team')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Team</Button>
+          <Button onClick={() => {openModal}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Contact Us</Button>
+          <Contact></Contact>
       </Group>
       </Container>
       <Divider size='xs'/>
+      <div>
+
+      {/* Conditionally render the modal */}
+      {showModal && (
+        <div className="modal">
+          {/* Modal content */}
+          <button onClick={closeModal}>Close Modal</button>
+        </div>
+      )}
+    </div>
     </header>
   )
 }
