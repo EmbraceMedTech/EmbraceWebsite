@@ -11,7 +11,7 @@ export default function Contact() {
           {/* Modal content */}
         </Modal>
   
-        <Button onClick={open}>Open centered Modal</Button>
+        <Button onClick={open} variant='subtle' color='black' radius='lg'>Contact Us</Button>
       </>
     );
   }

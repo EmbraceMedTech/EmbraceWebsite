@@ -25,11 +25,8 @@ function useScrollDirection() {
       window.removeEventListener('scroll', updateScrollDirection);
     }
   }, [scrollDirection]);
-
   return scrollDirection
 }
-
-
 
 export function Header() {
   const scrollDirection = useScrollDirection();
@@ -48,18 +45,6 @@ export function Header() {
       })
     }
   }
-
-  const [showModal, setShowModal] = useState(false);
-
-  const openModal = () => {
-    console.log('Opening modal');
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    console.log('Closing modal');
-    setShowModal(false);
-  };
   
   return (
     <header className={`${classes.header} ${scrollDirection === 'down' ? classes.hide : classes.show}`} >
@@ -76,7 +61,7 @@ export function Header() {
           <Menu.Item onClick={() => {scrollToSection('product')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Product</Menu.Item>
           <Menu.Item onClick={() => {scrollToSection('mission')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Mission</Menu.Item>
           <Menu.Item onClick={() => {scrollToSection('team')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Team</Menu.Item>
-          <Menu.Item onClick={() => {openModal}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Contact Us</Menu.Item>
+          <Contact></Contact>
         </Menu.Dropdown>
       </Menu>
       
@@ -85,20 +70,12 @@ export function Header() {
           <Button onClick={() => {scrollToSection('product')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Product</Button>
           <Button onClick={() => {scrollToSection('mission')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Mission</Button>
           <Button onClick={() => {scrollToSection('team')}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Team</Button>
-          <Button onClick={() => {openModal}} className={classes.headerButton} variant='subtle' color='black' radius='lg'>Contact Us</Button>
           <Contact></Contact>
       </Group>
       </Container>
       <Divider size='xs'/>
       <div>
 
-      {/* Conditionally render the modal */}
-      {showModal && (
-        <div className="modal">
-          {/* Modal content */}
-          <button onClick={closeModal}>Close Modal</button>
-        </div>
-      )}
     </div>
     </header>
   )
