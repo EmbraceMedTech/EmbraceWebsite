@@ -34,7 +34,6 @@ export default function Product() {
   ))
   return (
     <div className="product" id="product">
-      <div className='content'>
         {/* <div className='horizontal_stack'>
             <div>
                 <h1 className='h1-intro'>Product</h1>
@@ -59,7 +58,6 @@ export default function Product() {
         <SimpleGrid cols={{ base: 2, md: 1 }} spacing="xl" mt={50}>
         {features}
       </SimpleGrid>
-      </div>
       </div>
     </div>
 );
