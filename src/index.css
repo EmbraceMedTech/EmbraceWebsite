@@ -58,7 +58,8 @@ code {
   justify-content: center;
   align-items: center;
   color: black;
-  padding: 64px 0;
+  padding: 32px 0;
+  gap: 10px;
 }
 
 .horizontal_stack {
