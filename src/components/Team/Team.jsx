@@ -1,7 +1,8 @@
 import { Anchor, Button, Grid, Image, Container, UnstyledButton, rem, Card, Overlay, Modal, Title, Text, Group, ActionIcon, Tooltip, CopyButton } from '@mantine/core';
-import { useHover, useEventListener, useDisclosure } from '@mantine/hooks';
+import { useHover, useEventListener, useDisclosure, useMediaQuery } from '@mantine/hooks';
 import { useState, useEffect } from 'react';
 import { IconBrandLinkedin, IconMail, IconCheck } from '@tabler/icons-react';
+
 
 import classes from './Team.module.css';
 import memberData from './info.json';
@@ -53,6 +54,7 @@ export default function Team() {
         const jsonData = require('./info.json');
         setMembersArray(Object.values(jsonData));
     };
+    const isMobile = useMediaQuery('(max-width: 576px)');
 
     useEffect(() => {
         fetchMembersData();
@@ -75,7 +77,7 @@ export default function Team() {
                     <Grid justify="space-around" align="stretch">
                         {membersArray.map((member, index) => (
 
-                            <Grid.Col span={3} style={{ minHeight: rem(200) }} key={index}>
+                            <Grid.Col span={isMobile ? 6 : 3} style={{ minHeight: rem(200) }} key={index}>
                                 {/* <img src={`${member.image}`} alt={`Member ${index}`} /> */}
                                 <Image src={member.image_path} width="100%" height="auto" radius="md" alt={`Member ${index}`} />
                                 <Text size="xl" align="center" fw={700}>{names[index]}</Text>

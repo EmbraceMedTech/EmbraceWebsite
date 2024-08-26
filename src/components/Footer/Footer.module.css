@@ -9,23 +9,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-top: var(--mantine-spacing-xl);
-    padding-bottom: var(--mantine-spacing-xl);
-    padding-left: var(--mantine-spacing-xl); /* Add space on the left edge */
-    padding-right: var(--mantine-spacing-xl); /* Add space on the right edge */
+    padding: 0  64px;
     gap: var(--mantine-spacing-lg);
-    @media (max-width: $mantine-breakpoint-xs) {
+    @media (max-width: 576px    ) {
       flex-direction: column;
-      padding-left: var(--mantine-spacing-xl); /* Adjust left padding for smaller screens */
-      padding-right: var(--mantine-spacing-xl); /* Adjust right padding for smaller screens */
+      padding: 0 16px;
     }
     width: 100%;
     /* background-color: red; */
   }
   
   .links {
-    @media (max-width: $mantine-breakpoint-xs) {
-      margin-top: var(--mantine-spacing-md);
+    @media (max-width: 576px) {
+      margin-top: 768px;
     }
   }
 
