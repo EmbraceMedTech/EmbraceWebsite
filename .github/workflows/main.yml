@@ -1,12 +1,9 @@
-name: Deploy website on push
-
 on: push
-
+name: Deploy website on push
 jobs: 
   web-deploy:
     name: Deploy
     runs-on: ubuntu-latest
-
     steps:
     - name: Get latest code
       uses: actions/checkout@v3
@@ -22,18 +19,10 @@ jobs:
     - name: Build
       run: npm run build
 
-    - name: Sync files to althiamedical.com
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        server: ftp.althiamedical.com
-        username: ${{ secrets.FTP_USERNAME_ALTHIA }}
-        password: ${{ secrets.FTP_PASSWORD_ALTHIA }}
-        local-dir: ./build/
-
-    - name: Sync files to embracemedtech.com
+    - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: ftp.embracemedtech.com
-        username: ${{ secrets.FTP_USERNAME_EMBRACE }}
-        password: ${{ secrets.FTP_PASSWORD_EMBRACE }}
+        username: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
         local-dir: ./build/
