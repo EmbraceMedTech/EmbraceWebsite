@@ -67,7 +67,7 @@ export default function Team() {
             </Container>
             <Container sz="lg">
                 <div>
-                    <Text size="xl" align="center">Co-Founders</Text>
+                    {/* <Text size="xl" align="center">Co-Founders</Text> */}
                 </div>
             </Container>
             <Container size="xl">
