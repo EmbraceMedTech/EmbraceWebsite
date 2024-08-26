@@ -60,52 +60,56 @@ export default function Team() {
 
     return (
         <>
-        <Container sz="lg" id="team">
-        <div>
-            <Title order={1} align="center" className={classes.subheader}>Meet the Team</Title>
-        </div>
-        </Container>
-        <Container sz="lg">
-        <div>
-        <Text size="xl" align="center">Co-Founders</Text>
-        </div>
-        </Container>
-        <Container size="xl">
-            <div>
-            <Grid justify="space-around" align="stretch">
-                {membersArray.map((member, index) => (
-                    
-                    <Grid.Col span={3} style={{ minHeight: rem(200) }} key={index}>
-                        {/* <img src={`${member.image}`} alt={`Member ${index}`} /> */}
-                        <Image src={member.image_path} width="100%" height="auto" radius="md" alt={`Member ${index}`}/>
-                        <Text size="xl" align="center" fw={700}>{names[index]}</Text>
-                        <Text size="m" align="center">{member.education}</Text>
-                        <Text size="m" align="center">{member.concentration}</Text>
-                        <Group justify="center">
-                            <Text size="m" align="center">{member.email}</Text>
-                            <CopyButton value={member.email} timeout={2000}>
-                                {({ copied, copy }) => (
-                                    <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="right">
-                                    <ActionIcon color={copied ? 'teal' : 'gray'} variant="subtle" onClick={copy}>
-                                        {copied ? (
-                                        <IconCheck className={classes.email_icon}/>
-                                        ) : (
-                                        <IconMail className={classes.email_icon}/>
-                                        )}
-                                    </ActionIcon>
-                                    </Tooltip>
-                                )}
-                            </CopyButton>
-                            <a href={member.linkedin}>
-                                <IconBrandLinkedin className={classes.linkedin_icon}/>
-                            </a>
-                        </Group>
-                    </Grid.Col>
-                ))}
-            </Grid>
-              
-            </div>
-        </Container>
+            <Container sz="lg" id="team">
+                <div>
+                    <Title order={1} align="center" className={classes.subheader}>Meet the Team</Title>
+                </div>
+            </Container>
+            <Container sz="lg">
+                <div>
+                    <Text size="xl" align="center">Co-Founders</Text>
+                </div>
+            </Container>
+            <Container size="xl">
+                <div>
+                    <Grid justify="space-around" align="stretch">
+                        {membersArray.map((member, index) => (
+
+                            <Grid.Col span={3} style={{ minHeight: rem(200) }} key={index}>
+                                {/* <img src={`${member.image}`} alt={`Member ${index}`} /> */}
+                                <Image src={member.image_path} width="100%" height="auto" radius="md" alt={`Member ${index}`} />
+                                <Text size="xl" align="center" fw={700}>{names[index]}</Text>
+                                <Text size="m" align="center">{member.education}</Text>
+                                <Text size="m" align="center">{member.concentration}</Text>
+                                <Group justify="center">
+                                    <Text size="m" align="center">{member.email}</Text>
+                                    {member.email ?
+                                        <CopyButton value={member.email} timeout={2000}>
+                                            {({ copied, copy }) => (
+                                                <Tooltip label={copied ? 'Copied' : 'Copy'} withArrow position="right">
+                                                    <ActionIcon color={copied ? 'teal' : 'gray'} variant="subtle" onClick={copy}>
+                                                        {copied ? (
+                                                            <IconCheck className={classes.email_icon} />
+                                                        ) : (
+                                                            <IconMail className={classes.email_icon} />
+                                                        )}
+                                                    </ActionIcon>
+                                                </Tooltip>
+                                            )}
+                                        </CopyButton> : null}
+
+                                    {
+                                        member.linkedin ? <a href={member.linkedin}>
+                                            <IconBrandLinkedin className={classes.linkedin_icon} />
+                                        </a> : null
+                                    }
+                                </Group>
+                            </Grid.Col>
+                        ))}
+                    </Grid>
+
+                </div>
+            </Container>
             {/* <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
             <div id="meet_the_team" defer></div>
             <script type="text/javascript" src="./helper.js"></script> */}
