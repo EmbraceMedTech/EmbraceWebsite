@@ -1,18 +1,79 @@
 {
-    "Christian Labrador" : {
-        "id" : 1,
-        "education" : "Brown University",
-        "concentration" : "Mechanical Engineering",
+    "Christian Labrador": {
+        "id": 1,
+        "education": "Brown University",
+        "concentration": "Mechanical Engineering",
         "image_path": "/memberImages/clab.png",
         "linkedin": "https://www.linkedin.com/in/christian-labrador-1ba425206/",
         "email": "christianl.althia@gmail.com"
     },
-    "Joseph Dewan" : {
-        "id" : 2,
-        "education" : "Brown University",
-        "concentration" : "Mechanical Engineering",
+    "Joseph Dewan": {
+        "id": 2,
+        "education": "Brown University",
+        "concentration": "Mechanical Engineering",
         "image_path": "/memberImages/Joseph Headshot.jpeg",
         "linkedin": "https://www.linkedin.com/in/joseph-dewan",
         "email": "joseph.althia@gmail.com"
+    },
+    "Gabrielle Shieh": {
+        "id": 3,
+        "education": "Brown University",
+        "concentration": "Computer Science (Machine Learning Focus)",
+        "image_path": "/memberImages/Gabby_Headshot.jpeg",
+        "linkedin": "https://www.linkedin.com/in/gabrielle-shieh/",
+        "email": "gabrielle_shieh@brown.edu"
+    },
+    "Chandler Zhu": {
+        "id": 4,
+        "education": "Brown University",
+        "concentration": "Biomeedical Engineering",
+        "image_path": "/memberImages/Chandler_Headshot.jpeg",
+        "linkedin": "https://www.linkedin.com/in/chandler-zhu/",
+        "email": "chandler_zhu@brown.edu"
+    },
+    "Ashly": {
+        "id": 5,
+        "education": "Massachusetts Institute of Technology",
+        "concentration": "Electrical Engineering",
+        "image_path": "/memberImages/Ashly_Headshot.jpeg",
+        "linkedin": " https://www.linkedin.com/in/ashly-vivian-585709281/",
+        "email": "ashly@mit.edu"
+    },
+    "Kenneth Liou": {
+        "id": 6,
+        "education": "Brown University",
+        "concentration": "Computer Science & Engineering",
+        "image_path": "/memberImages/Ken_Headshot.jpeg",
+        "linkedin": "https://www.linkedin.com/in/kenneth-liou/",
+        "email": "kenneth_liou@brown.edu"
+    },
+    "Jesus Rodriguez": {
+        "id": 7,
+        "education": "Brown University",
+        "concentration": "Computer Science & Mathematics",
+        "image_path": "/memberImages/Jesus_Headshot.jpeg",
+        "linkedin": "https://www.linkedin.com/in/jrodri97/",
+        "email": "jesus_rodriguez@brown.edu"
+    },
+    "Mark Marich": {
+        "id": 8,
+        "education": "PRESIDENT  at Northeast Orthotics and Prosthetics",
+        "concentration": "~35 years of experience helping amputees",
+        "image_path": "/memberImages/Mark_Headshot.jpg",
+        "email": ""
+    },
+    "Mike Nunnery": {
+        "id": 9,
+        "education": "Nunnery Orthotics and Prosthetics",
+        "concentration": "1st person in the US to use a microprocessor knee, ~35 years of experience",
+        "image_path": "/memberImages/Mike_Headshot.jpg",
+        "email": "mike@nunneryoandp.com"
+    },
+    "Wiggin & Dana Law Firm": {
+        "id": "10",
+        "education": "Wiggin & Dana law firm",
+        "concentration": "",
+        "image_path": "/memberImages/Wiggin & Dana.jpg",
+        "email": ""
     }
 }
