@@ -1,61 +1,66 @@
 // ContactModal.js
 import { useDisclosure } from '@mantine/hooks';
-import { Modal, Button } from '@mantine/core';
+import { Modal, Button, TextInput, Textarea, Group } from '@mantine/core';
 
 export default function Contact() {
     const [opened, { open, close }] = useDisclosure(false);
+    const [email, setEmail] = useState('');
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+    const [message, setMessage] = useState('');
   
+    const handleSubmit = async () => {
+      const payload = {
+        text: `New contact form submission:\nEmail: ${email}\nFirst Name: ${firstName}\nLast Name: ${lastName}\nMessage: ${message}`
+      };
+      await fetch('YOUR_SLACK_WEBHOOK_URL', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      });
+  
+      close();
+    };
+
     return (
       <>
         <Modal opened={opened} onClose={close} title="Authentication" centered>
-          {/* Modal content */}
+          <TextInput
+          label="Email"
+          placeholder="Your email"
+          value={email}
+          onChange={(event) => setEmail(event.currentTarget.value)}
+          required
+          />
+          <TextInput
+            label="First Name"
+            placeholder="Your first name"
+            value={firstName}
+            onChange={(event) => setFirstName(event.currentTarget.value)}
+            required
+          />
+          <TextInput
+            label="Last Name"
+            placeholder="Your last name"
+            value={lastName}
+            onChange={(event) => setLastName(event.currentTarget.value)}
+            required
+          />
+          <Textarea
+            label="Message"
+            placeholder="Your message"
+            value={message}
+            onChange={(event) => setMessage(event.currentTarget.value)}
+            required
+          />
+          <Group position="right" mt="md">
+            <Button onClick={handleSubmit}>Submit</Button>
+          </Group>
         </Modal>
   
         <Button onClick={open} variant='subtle' color='black' radius='lg'>Contact Us</Button>
       </>
     );
   }
-
-// const Contact = ({ closeModal }) => {
-//   const [formData, setFormData] = useState({
-//     firstName: '',
-//     lastName: '',
-//     email: '',
-//     message: '',
-//   });
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData((prevData) => ({ ...prevData, [name]: value }));
-//   };
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // Send the formData to your Slack channel (you'll need to implement this part)
-//     console.log('Form data submitted:', formData);
-//     closeModal(); // Close the modal
-//   };
-
-//   return (
-//     <Modal title="Contact Us" onClose={closeModal}>
-//       <form onSubmit={handleSubmit}>
-//         <Input
-//           label="First Name"
-//           name="firstName"
-//           value={formData.firstName}
-//           onChange={handleChange}
-//         />
-//         {/* Other input fields (last name, email, message) go here */}
-//         <Textarea
-//           label="Message"
-//           name="message"
-//           value={formData.message}
-//           onChange={handleChange}
-//         />
-//         <Button type="submit">Submit</Button>
-//       </form>
-//     </Modal>
-//   );
-// };
-
-// export default ContactModal;
